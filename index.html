@@ -337,6 +337,52 @@
       outline: none;
     }
 
+    .qr-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border: 1px solid rgba(255, 244, 206, 0.28);
+      border-radius: 18px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.07);
+      text-decoration: none;
+    }
+
+    .qr-card:focus-visible,
+    .qr-card:hover {
+      border-color: rgba(255, 236, 190, 0.62);
+      outline: none;
+    }
+
+    .qr-code {
+      width: 86px;
+      height: 86px;
+      display: block;
+      border-radius: 12px;
+      background: #fffaf0;
+    }
+
+    .qr-copy {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .qr-title {
+      color: var(--gold);
+      font-size: 0.86rem;
+      font-weight: 900;
+    }
+
+    .qr-url {
+      color: rgba(255, 250, 240, 0.72);
+      font-size: 0.78rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
     footer {
       display: flex;
       align-items: center;
@@ -373,6 +419,11 @@
 
       .social-name {
         font-size: 0.86rem;
+      }
+
+      .qr-code {
+        width: 76px;
+        height: 76px;
       }
     }
   </style>
@@ -429,6 +480,14 @@
         </svg>
         <span data-share-label>Share Timtam</span>
       </button>
+
+      <a class="qr-card" href="https://timtam.vercel.app/" aria-label="Scan or open Timtam e-card QR link">
+        <img class="qr-code" src="timtam-qr.png" alt="QR code for Timtam e-card">
+        <span class="qr-copy">
+          <span class="qr-title">Scan Timtam</span>
+          <span class="qr-url">timtam.vercel.app</span>
+        </span>
+      </a>
     </main>
 
     <footer>Official Timtam fan card for quick hellos and friendly introductions.</footer>
