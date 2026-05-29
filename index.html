@@ -339,10 +339,10 @@
 
     .qr-card {
       display: grid;
-      grid-template-columns: auto 1fr;
+      justify-items: center;
       align-items: center;
-      gap: 12px;
-      padding: 10px;
+      gap: 10px;
+      padding: 14px;
       border: 1px solid rgba(255, 244, 206, 0.28);
       border-radius: 18px;
       color: var(--ink);
@@ -357,10 +357,10 @@
     }
 
     .qr-code {
-      width: 86px;
-      height: 86px;
+      width: min(58vw, 190px);
+      height: min(58vw, 190px);
       display: block;
-      border-radius: 12px;
+      border-radius: 18px;
       background: #fffaf0;
     }
 
@@ -368,6 +368,7 @@
       display: grid;
       gap: 3px;
       min-width: 0;
+      text-align: center;
     }
 
     .qr-title {
@@ -421,9 +422,13 @@
         font-size: 0.86rem;
       }
 
+      .qr-card {
+        padding: 12px;
+      }
+
       .qr-code {
-        width: 76px;
-        height: 76px;
+        width: min(68vw, 176px);
+        height: min(68vw, 176px);
       }
     }
   </style>
