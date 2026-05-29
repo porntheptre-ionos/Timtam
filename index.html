@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timtam Pet Star</title>
+  <meta name="description" content="Timtam's pet star e-card with easy social links.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #fffaf0;
+      --muted: #d8c9ac;
+      --gold: #f3c76a;
+      --gold-deep: #a77222;
+      --rose: #f7a7c4;
+      --night: #15110f;
+      --velvet: #3a1728;
+      --line: rgba(255, 236, 190, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(243, 199, 106, 0.28), transparent 34%),
+        radial-gradient(circle at 0% 86%, rgba(247, 167, 196, 0.18), transparent 31%),
+        linear-gradient(145deg, #150f12 0%, #2b1320 47%, #0d0b0b 100%);
+    }
+
+    .ecard {
+      width: min(100%, 430px);
+      min-height: calc(100svh - 36px);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 16px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%),
+        rgba(18, 13, 13, 0.76);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+    }
+
+    .ecard::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(110deg, transparent 0 18%, rgba(255, 255, 255, 0.13) 19%, transparent 27% 100%),
+        radial-gradient(circle at 50% 18%, rgba(255, 244, 202, 0.22), transparent 27%);
+      opacity: 0.8;
+    }
+
+    header,
+    main,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 42px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .sparkle {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      fill: currentColor;
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    main {
+      display: grid;
+      align-content: center;
+      gap: 15px;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      width: min(100%, 340px);
+      margin: 0 auto;
+      aspect-ratio: 0.82;
+      border-radius: 24px;
+      padding: 8px;
+      background: linear-gradient(145deg, rgba(243, 199, 106, 0.95), rgba(255, 255, 255, 0.3), rgba(247, 167, 196, 0.8));
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45), 0 0 44px rgba(243, 199, 106, 0.2);
+    }
+
+    .portrait {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 38%;
+      border-radius: 18px;
+      background: #231815;
+    }
+
+    .ribbon {
+      position: absolute;
+      left: 50%;
+      bottom: -11px;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: calc(100% - 24px);
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 244, 206, 0.5);
+      border-radius: 999px;
+      color: #20130b;
+      background: linear-gradient(180deg, #ffe8a3, var(--gold));
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .intro {
+      display: grid;
+      gap: 6px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 16vw, 4.9rem);
+      line-height: 0.9;
+      font-weight: 900;
+      text-wrap: balance;
+      text-shadow: 0 4px 26px rgba(0, 0, 0, 0.5);
+    }
+
+    .tagline {
+      margin: 0 auto;
+      max-width: 26ch;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .actions {
+      display: grid;
+      gap: 10px;
+      padding-top: 2px;
+    }
+
+    .social {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      color: #160f0d;
+      background: var(--ink);
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .social svg {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      fill: currentColor;
+    }
+
+    .social:focus-visible,
+    .social:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 236, 190, 0.65);
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.28);
+      outline: none;
+    }
+
+    .social.facebook {
+      color: #ffffff;
+      background: linear-gradient(180deg, #2f7df5, #1558c8);
+    }
+
+    .social.linkedin {
+      color: #ffffff;
+      background: linear-gradient(180deg, #1677b7, #075a90);
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      color: rgba(255, 250, 240, 0.7);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @media (max-width: 360px) {
+      body {
+        padding: 10px;
+      }
+
+      .ecard {
+        min-height: calc(100svh - 20px);
+        padding: 12px;
+        border-radius: 20px;
+      }
+
+      .portrait-wrap {
+        width: min(100%, 300px);
+      }
+
+      h1 {
+        font-size: 2.85rem;
+      }
+
+      .social {
+        min-height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="ecard" aria-label="Timtam pet star contact card">
+    <header>
+      <div class="badge" aria-label="Pet star">
+        <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.5 14.9 9l6.6 3-6.6 3-2.9 6.5L9.1 15l-6.6-3 6.6-3L12 2.5Z"/>
+        </svg>
+        Pet Star
+      </div>
+      <div class="label">E-card</div>
+    </header>
+
+    <main>
+      <div class="portrait-wrap">
+        <img class="portrait" src="Timtam Photo.jpg" alt="Timtam, the pet star">
+        <div class="ribbon">Now accepting fans</div>
+      </div>
+
+      <div class="intro">
+        <h1>Timtam</h1>
+        <p class="tagline">Small celebrity energy, bright eyes, and VIP access to say hello.</p>
+      </div>
+
+      <nav class="actions" aria-label="Social media links">
+        <a class="social facebook" href="https://www.facebook.com/pornthep.treechorvitaya" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.1 8.3V6.8c0-.7.5-.9.9-.9h2.2V2.1L14.1 2c-3.5 0-4.3 2.6-4.3 4.3v2H7v4.1h2.8V22h4.3v-9.6H17l.5-4.1h-3.4Z"/>
+          </svg>
+          Contact on Facebook
+        </a>
+        <a class="social linkedin" href="https://www.linkedin.com/in/pornthep-treechorvitaya/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.9 8.7H2.8V22h4.1V8.7ZM4.8 2C3.5 2 2.5 3 2.5 4.2c0 1.3 1 2.3 2.3 2.3S7 5.5 7 4.2C7 3 6 2 4.8 2Zm16.7 12.4c0-3.6-1.9-5.9-5-5.9-2.3 0-3.3 1.3-3.9 2.2h-.1v-2H8.7V22h4.1v-6.6c0-1.8.3-3.5 2.5-3.5 2.1 0 2.1 2 2.1 3.6V22h4.1v-7.6Z"/>
+          </svg>
+          Connect on LinkedIn
+        </a>
+      </nav>
+    </main>
+
+    <footer>Made for quick hellos, fan mail, and friendly introductions.</footer>
+  </section>
+</body>
+</html>
