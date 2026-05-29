@@ -3,8 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Timtam Pet Star</title>
-  <meta name="description" content="Timtam's pet star e-card with easy social links.">
+  <title>Timtam the Pet Star | Cute Glam Pet E-card</title>
+  <meta name="description" content="Meet Timtam, a glam little pet star with celebrity energy, cute photo moments, and easy fan contact links.">
+  <link rel="canonical" href="https://timtam.vercel.app/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://timtam.vercel.app/">
+  <meta property="og:title" content="Timtam the Pet Star">
+  <meta property="og:description" content="Meet Timtam, a glam little pet star with celebrity energy and easy fan contact links.">
+  <meta property="og:image" content="https://timtam.vercel.app/timtam-share-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Timtam the glam pet star e-card preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Timtam the Pet Star">
+  <meta name="twitter:description" content="Meet Timtam, a glam little pet star with celebrity energy and easy fan contact links.">
+  <meta name="twitter:image" content="https://timtam.vercel.app/timtam-share-card.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Timtam the Pet Star",
+      "url": "https://timtam.vercel.app/",
+      "description": "Meet Timtam, a glam little pet star with celebrity energy, cute photo moments, and easy fan contact links.",
+      "image": "https://timtam.vercel.app/timtam-share-card.png",
+      "about": {
+        "@type": "Thing",
+        "name": "Timtam",
+        "description": "A cute glam pet star with celebrity energy.",
+        "image": "https://timtam.vercel.app/timtam-pet-star.jpg",
+        "sameAs": [
+          "https://www.facebook.com/pornthep.treechorvitaya",
+          "https://www.linkedin.com/in/pornthep-treechorvitaya/"
+        ]
+      }
+    }
+  </script>
   <style>
     :root {
       color-scheme: dark;
@@ -266,6 +301,42 @@
         linear-gradient(145deg, #bdf2ff 0%, #85d4eb 50%, #ffe3a6 100%);
     }
 
+    .share-card {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      border: 1px solid rgba(255, 244, 206, 0.5);
+      border-radius: 16px;
+      color: #24120d;
+      background: linear-gradient(180deg, #fff3c2, #f3c76a);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 900;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .share-card svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .share-card:focus-visible,
+    .share-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
+      outline: none;
+    }
+
     footer {
       display: flex;
       align-items: center;
@@ -320,38 +391,77 @@
 
     <main>
       <div class="portrait-wrap">
-        <img class="portrait" src="Timtam Photo.jpg" alt="Timtam, the pet star">
-        <div class="ribbon">Now accepting fans</div>
+        <img class="portrait" src="timtam-pet-star.jpg" alt="Timtam posing for a glam pet star e-card">
+        <div class="ribbon">Fan Club Open</div>
       </div>
 
       <div class="intro">
         <h1>Timtam</h1>
-        <p class="tagline">Small celebrity energy, bright eyes, and VIP access to say hello.</p>
+        <p class="tagline">Tiny star. Big sparkle. Available for fan mail and VIP cuddles.</p>
       </div>
 
       <nav class="actions" aria-label="Social media links">
-        <a class="social facebook" href="https://www.facebook.com/pornthep.treechorvitaya" target="_blank" rel="noopener noreferrer">
+        <a class="social facebook" href="https://www.facebook.com/pornthep.treechorvitaya" target="_blank" rel="noopener noreferrer" aria-label="Say hi to Timtam on Facebook">
           <span class="social-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.1 8.3V6.8c0-.7.5-.9.9-.9h2.2V2.1L14.1 2c-3.5 0-4.3 2.6-4.3 4.3v2H7v4.1h2.8V22h4.3v-9.6H17l.5-4.1h-3.4Z"/>
             </svg>
           </span>
           <span class="social-name">Facebook</span>
-          <span class="social-note">Say hi</span>
+          <span class="social-note">Fan mail</span>
         </a>
-        <a class="social linkedin" href="https://www.linkedin.com/in/pornthep-treechorvitaya/" target="_blank" rel="noopener noreferrer">
+        <a class="social linkedin" href="https://www.linkedin.com/in/pornthep-treechorvitaya/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Timtam's contact on LinkedIn">
           <span class="social-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6.9 8.7H2.8V22h4.1V8.7ZM4.8 2C3.5 2 2.5 3 2.5 4.2c0 1.3 1 2.3 2.3 2.3S7 5.5 7 4.2C7 3 6 2 4.8 2Zm16.7 12.4c0-3.6-1.9-5.9-5-5.9-2.3 0-3.3 1.3-3.9 2.2h-.1v-2H8.7V22h4.1v-6.6c0-1.8.3-3.5 2.5-3.5 2.1 0 2.1 2 2.1 3.6V22h4.1v-7.6Z"/>
             </svg>
           </span>
           <span class="social-name">LinkedIn</span>
-          <span class="social-note">Connect</span>
+          <span class="social-note">Manager contact</span>
         </a>
       </nav>
+
+      <button class="share-card" type="button" data-share>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/>
+          <path d="M12 16V3"/>
+          <path d="m7 8 5-5 5 5"/>
+        </svg>
+        <span data-share-label>Share Timtam</span>
+      </button>
     </main>
 
-    <footer>Made for quick hellos, fan mail, and friendly introductions.</footer>
+    <footer>Official Timtam fan card for quick hellos and friendly introductions.</footer>
   </section>
+  <script>
+    const shareButton = document.querySelector("[data-share]");
+    const shareLabel = document.querySelector("[data-share-label]");
+    const shareData = {
+      title: "Timtam the Pet Star",
+      text: "Meet Timtam, a glam little pet star with celebrity energy.",
+      url: "https://timtam.vercel.app/"
+    };
+
+    shareButton?.addEventListener("click", async () => {
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(shareData.url);
+          shareLabel.textContent = "Link copied";
+          window.setTimeout(() => {
+            shareLabel.textContent = "Share Timtam";
+          }, 1800);
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          shareLabel.textContent = "Copy failed";
+          window.setTimeout(() => {
+            shareLabel.textContent = "Share Timtam";
+          }, 1800);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
